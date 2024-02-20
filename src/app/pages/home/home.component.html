@@ -1,0 +1,14 @@
+<app-header></app-header>
+<app-baner></app-baner>
+<main class="container mx-auto">
+  <div class="text-center p-10">
+      <h1 class="font-bold text-4xl mb-4">Product card</h1>
+  </div>
+<div class="flex flex-wrap justify-center gap-6">
+    <app-product-cart
+      *ngFor="let productParent of productList"
+      [productChild]="productParent"
+    />
+  </div>
+</main>
+<app-footer></app-footer>

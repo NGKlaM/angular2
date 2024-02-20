@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: blueviolet !important;
+  color: white;
+}
+.p-multiselect-header .ng-star-inserted .p-checkbox-box {
+  display: none !important;
+  pointer-events: none !important;
+}
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+  background-color: #e5e7eb !important;
+}
+.p-multiselect {
+  border: 1px solid grey !important;
+}

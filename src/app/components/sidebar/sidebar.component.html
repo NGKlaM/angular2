@@ -1,0 +1,63 @@
+<div class="">
+  <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+    <div class="fixed inset-y-0 z-10 flex w-65 p-[30px]">
+      <div class="z-10 flex flex-col flex-1">
+        <div class="flex items-center flex-shrink-0 w-64 p-4">
+          <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <nav class="flex flex-col flex-1 w-64 gap-5 p-4 mt-4">
+          <a href="#" class="flex items-center space-x-2">
+            <i class="fa-solid fa-house"></i>
+            <div>
+              <div><span>Home</span></div>
+            </div>
+          </a>
+          <a routerLink="/admin/user/userlist" class="flex items-center space-x-2">
+            <i class="fa-solid fa-user-group"></i>
+            <div>
+              <div><span>Users</span></div>
+            </div>
+          </a>
+          <a routerLink="/admin/category/list" class="flex items-center space-x-2">
+            <i class="fa-solid fa-list"></i>
+            <div>
+              <div><span>Categories</span></div>
+            </div>
+          </a>
+          <a routerLink="/admin/products" class="flex items-center space-x-2">
+            <i class="fa-solid fa-shapes"></i>
+            <div>
+              <div><span>Products</span></div>
+            </div>
+          </a>
+        </nav>
+        <div class="flex-shrink-0 p-4">
+          <button (click)="Logout()" class="flex items-center space-x-2">
+            <svg aria-hidden="true" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.1/alpine.js"></script>
+<script>
+  const setup = () => {
+    return {
+      isSidebarOpen: false,
+    };
+  };
+</script>

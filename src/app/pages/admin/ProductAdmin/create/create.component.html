@@ -1,0 +1,129 @@
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white text-center">
+  Add Product
+</h3>
+<p-toast></p-toast>
+<!-- Modal body -->
+<form
+  class="flex justify-center"
+  [formGroup]="userForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="grid gap-4 mb-4 sm:grid-cols-2 w-[500px]">
+    <div class="sm:col-span-3">
+      <label
+        for="title"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Product Name</label
+      >
+      <input
+        formControlName="title"
+        type="text"
+        name="title"
+        id="title"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+        placeholder="Type product title"
+      />
+      <div
+        *ngIf="userForm.get('title')?.touched && userForm.get('title')?.errors?.['required']"
+      >
+        <small class="text-[red]">Product Name is not required</small>
+      </div>
+    </div>
+    <div class="sm:col-span-3">
+      <label
+        for="image"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Product Image</label
+      >
+      <input
+        formControlName="image"
+        type="text"
+        name="image"
+        id="image"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+        placeholder="Product brand"
+      />
+      <div
+        *ngIf="userForm.get('image')?.touched && userForm.get('image')?.errors?.['required']"
+      >
+        <small class="text-[red]">Image is not required</small>
+      </div>
+    </div>
+    <div>
+      <label
+        for="price"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Product Price</label
+      >
+      <input
+        formControlName="price"
+        type="number"
+        name="price"
+        id="price"
+        class="bg-gray-50 border border-gray-300 w-100% text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+        placeholder="Enter Product Price"
+      />
+      <div
+        *ngIf="userForm.get('price')?.touched && userForm.get('price')?.errors?.['required']"
+      >
+        <small class="text-[red]">Price is not required</small>
+      </div>
+    </div>
+    <div>
+      <label
+        for="category"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Category</label
+      >
+      <select
+        formControlName="categoryId"
+        name="categoryId"
+        id="category"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+      >
+        <option *ngFor="let category of categories" [ngValue]="category._id">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="sm:col-span-3">
+      <label
+        for="description"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Description</label
+      >
+      <textarea
+        formControlName="description"
+        id="description"
+        rows="4"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+        placeholder="Write product description here"
+        name="description"
+      ></textarea>
+      <div
+        *ngIf="userForm.get('description')?.touched && userForm.get('description')?.errors?.['required']"
+      >
+        <small class="text-[red]">Description is not required</small>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="text-white justify-center inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+    >
+      <svg
+        class="mr-1 -ml-1 w-6 h-6"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      Create product
+    </button>
+  </div>
+</form>
